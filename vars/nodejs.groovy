@@ -6,7 +6,7 @@ pipeline {
         stage('Lint checks') {
             steps {
                 script {
-                    nodejs.lintcheck()
+                      lintcheck()
                     }
                 }
             }
