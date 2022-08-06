@@ -6,7 +6,7 @@ pipeline {
         stage('Lint checks') {
             steps {
                 script {
-                      lintcheck()
+                      lintcheck(COMPONENT)
                     }
                 }
             }
