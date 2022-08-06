@@ -23,3 +23,8 @@ pipeline {
     }  // end of the pipeline
 }  // end of function call 
 
+
+
+sh "echo hai "
+sh "echo hello"
+sh "echi bue"
