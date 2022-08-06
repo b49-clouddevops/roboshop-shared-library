@@ -1,5 +1,9 @@
-fef lintChecks() {
-    
+def lintChecks() {
+echo installing jslint
+npm install jslint
+~/node_modules/jslint/bin/jslint.js server.js || true
+
+
 }
 
 def call() {
