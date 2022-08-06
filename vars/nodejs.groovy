@@ -16,7 +16,7 @@ pipeline {
 
 
 // defining the lint check function
-def lintcheck(message, URL) {    
+def lintcheck() {    
     echo "INFO: ${message} ,url value is ${URL}"
 }
 
