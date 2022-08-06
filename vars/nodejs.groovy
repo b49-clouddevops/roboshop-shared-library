@@ -3,7 +3,7 @@ def lintChecks() {
     echo installing jslint
     npm install jslint
     ~/node_modules/jslint/bin/jslint.js server.js || true
-    echo lint checks completed
+    echo lint checks completed for ${COMPONENT}
     '''
 }
 
@@ -15,7 +15,7 @@ pipeline {
         stage('Lint checks') {
             steps {
                 script {
-                     sample.lintCheck()
+                     lintChecks()
                     }
                 }
             }
