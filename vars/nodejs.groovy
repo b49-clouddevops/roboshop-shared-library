@@ -18,10 +18,9 @@ pipeline {
 // defining the lint check function
 def lintcheck(COMPONENT) {    
     echo "lint checks started for ${COMPONENT}"
-                sh "echo installing jslint"
-                sh "npm install jslint"
-                sh "ls -ltr node_modules/jslint/bin"
-                sh "~/node_modules/jslint/bin/jslint.js server.js || true"
+     sh "echo installing jslint"
+     sh "npm install jslint"
+     ~/node_modules/jslint/bin/jslint.js server.js || true"
                 sh "echo lint checks completed"
 
 }
