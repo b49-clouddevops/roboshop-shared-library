@@ -3,3 +3,19 @@ def lintcheck(message, URL) {    // Declaring a function
 }
 
 info("Hai" , "twitter.com")           // calling a function
+
+
+def call() {
+pipeline {
+    agent any 
+    stages {
+        // This should run for every commit on feature branch
+        stage('Lint checks') {
+            steps {
+                script {
+                    nodejs.lintcheck()
+                }
+            }
+        }
+    } // end of the stages
+}  // end of the pipeline
