@@ -1,3 +1,7 @@
+fef lintChecks() {
+    
+}
+
 def call() {
 pipeline {
     agent any 
