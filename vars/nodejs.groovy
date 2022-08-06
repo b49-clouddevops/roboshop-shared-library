@@ -20,9 +20,8 @@ def lintcheck(COMPONENT) {
     echo "lint checks started for ${COMPONENT}"
      sh "echo installing jslint"
      sh "npm install jslint"
-     ~/node_modules/jslint/bin/jslint.js server.js || true"
-                sh "echo lint checks completed"
+     sh "node_modules/jslint/bin/jslint.js server.js || true"
+     sh "echo lint checks completed"
 
 }
 
-info("Hai" , "twitter.com")           
