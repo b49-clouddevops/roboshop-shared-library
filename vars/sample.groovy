@@ -1,5 +1,5 @@
-def info(message) {    // Declaring a function 
-    echo "INFO: ${message}"
+def info(message, URL) {    // Declaring a function 
+    echo "INFO: ${message}  ,url value is ${URL}"
 }
 
-info("Hai")           // calling a function
+info("Hai" , )           // calling a function
