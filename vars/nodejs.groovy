@@ -15,8 +15,9 @@ pipeline {
 }  // end of function call 
 
 
-def info(message, URL) {    // Declaring a function 
+// defining the lint check function
+def lintcheck(message, URL) {    
     echo "INFO: ${message} ,url value is ${URL}"
 }
 
-info("Hai" , "twitter.com")           // calling a function
+info("Hai" , "twitter.com")           
