@@ -15,6 +15,10 @@ def sonarCheck() {
 def call() {     // call is the default which will be called
 pipeline {
     agent any 
+    environment { 
+        SSH_CRED = credentials('SSH-Cenos7')
+        GIT = credentials('GitHub-Token')
+    }
     stages {
         // This should run for every commit on feature branch
         stage('Lint checks') {
