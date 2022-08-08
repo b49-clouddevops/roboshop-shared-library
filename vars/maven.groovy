@@ -26,7 +26,7 @@ pipeline {
                     mvn --version
                     mvn clean compile
                     pwd && ls -ltr
-                     lintChecks()
+                    lintChecks()
                     }
                 }
             }
