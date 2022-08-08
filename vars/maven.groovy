@@ -8,9 +8,6 @@ def lintChecks() {
 
 def sonarCheck() {
   sh '''
-     mvn --version
-     mvn clean compile
-     pwd && ls -ltr
      sonar-scanner -Dsonar.host.url=http://172.31.9.36:9000 -Dsonar.sources=. -Dsonar.login=${SONAR_USR} -Dsonar.password=${SONAR_PSW} -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
     '''
 }
@@ -26,6 +23,9 @@ pipeline {
         stage('Lint checks') {
             steps {
                 script {
+                    mvn --version
+                    mvn clean compile
+                    pwd && ls -ltr
                      lintChecks()
                     }
                 }
