@@ -28,10 +28,10 @@ pipeline {
                 }
             }
 
-        stage('Lint checks') {
+        stage('Sonar Code Quality Check') {
             steps {
                 script {
-                     lintChecks()
+                     sonarCheck()
                     }
                 }
             }
