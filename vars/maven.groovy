@@ -31,7 +31,7 @@ pipeline {
         stage('Sonar Code Quality Check') {
             steps {
                 script {
-                    
+                     sh mvn clean compile
                      sonarCheck()
                     }
                 }
