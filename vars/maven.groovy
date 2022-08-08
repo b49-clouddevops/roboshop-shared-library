@@ -8,7 +8,7 @@ def lintChecks() {
 
 def sonarCheck() {
   sh '''
-     sonar-scanner -Dsonar.host.url=http://172.31.14.223:9000 -Dsonar.sources=. -Dsonar.login=admin -Dsonar.password=password -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
+     sonar-scanner -Dsonar.host.url=http://172.31.14.223:9000 -Dsonar.sources=. -Dsonar.login=${} -Dsonar.password=password -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
     '''
 }
 
@@ -16,8 +16,7 @@ def call() {     // call is the default which will be called
 pipeline {
     agent any 
     environment { 
-        SSH_CRED = credentials('SSH-Cenos7')
-        GIT = credentials('GitHub-Token')
+        SONAR = credentials('sonar')
     }
     stages {
         // This should run for every commit on feature branch
