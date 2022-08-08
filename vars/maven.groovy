@@ -8,7 +8,7 @@ def lintChecks() {
 
 def sonarCheck() {
   sh '''
-     sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.sources=. -Dsonar.login=admin -Dsonar.password=password -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
+     sonar-scanner -Dsonar.host.url=http://172.31.14.223:9000 -Dsonar.sources=. -Dsonar.login=admin -Dsonar.password=password -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
     '''
 }
 
