@@ -27,6 +27,14 @@ pipeline {
                     }
                 }
             }
+
+        stage('Lint checks') {
+            steps {
+                script {
+                     lintChecks()
+                    }
+                }
+            }
         } // end of the stages
     }  // end of the pipeline
 }  // end of function call 
