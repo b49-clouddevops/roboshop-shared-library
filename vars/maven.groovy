@@ -25,7 +25,7 @@ pipeline {
         stage('Sonar Code Quality Check') {
             steps {
                 script {
-                     JonarCheck()
+                     common.javaSonarCheck()
                     }
                 }
             }
