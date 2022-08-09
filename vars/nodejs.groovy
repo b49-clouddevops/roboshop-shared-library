@@ -27,6 +27,18 @@ pipeline {
                     }
                 }
             }
+        stage('Sonar Code Quality Check') {
+            steps {
+                script {
+                     sonarCheck()
+                    }
+                }
+            }
+        stage('Build') {
+            steps {
+                sh "echo Doing build"
+               }
+            }
         } // end of the stages
     }  // end of the pipeline
 }  // end of function call 
