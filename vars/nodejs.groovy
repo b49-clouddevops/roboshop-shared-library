@@ -18,6 +18,9 @@ def sonarCheck() {
 def call() {     // call is the default which will be called
 pipeline {
     agent any 
+    environment { 
+        SONAR = credentials('sonar')
+    }
     stages {
         // This should run for every commit on feature branch
         stage('Lint checks') {
