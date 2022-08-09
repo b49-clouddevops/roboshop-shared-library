@@ -12,6 +12,7 @@ def sonarCheck() {
     mvn clean compile
     pwd && ls -ltr
     sonar-scanner -Dsonar.host.url=http://172.31.4.93:9000 -Dsonar.sources=. -Dsonar.login=${SONAR_USR} -Dsonar.password=${SONAR_PSW} -Dsonar.projectKey=shipping -Dsonar.java.binaries=target/classes/
+    
    '''
 }
 
