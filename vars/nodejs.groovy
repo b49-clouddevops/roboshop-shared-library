@@ -69,7 +69,7 @@ pipeline {
                expression { env.TAG_NAME != null }
                 }   
             steps {
-                curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file pom.xml http://:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom
+                curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file pom.xml http://172.31.8.134:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom
                }
             }
         } // end of the stages
