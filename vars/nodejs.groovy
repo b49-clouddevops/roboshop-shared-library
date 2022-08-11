@@ -53,6 +53,8 @@ pipeline {
             }
         }
 
+// Preparing an artifact with that tag should only happen if it doesn;t exist on NEXUS.
+
         stage('Prepare Artifacts') {
             when { 
                expression { env.TAG_NAME != null }
