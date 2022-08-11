@@ -56,6 +56,7 @@ pipeline {
             steps {
                 sh "npm install"   // Generates the nodes_modules
                 sh "zip ${COMPONENT}.zip node_modules/ server.js" 
+                sh "echo Artifacts Preparation Completed................!!!"
             }
         }
 
