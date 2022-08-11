@@ -70,7 +70,7 @@ pipeline {
                 }   
             steps {
                sh "curl -f -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${COMPONENT}.zip http://172.31.8.134:8081/repository/${COMPONENT}/${COMPONENT}.zip"
-               // Curl reat
+               // Curl returns failure when failed when you use -f
                }
             }
         } // end of the stages
