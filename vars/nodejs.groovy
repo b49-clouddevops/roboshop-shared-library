@@ -69,7 +69,7 @@ pipeline {
                expression { env.TAG_NAME != null }
                 }   
             steps {
-                curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file pom.xml http://172.31.8.134:8081/repository/${COMPONENT}/
+                curl -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file pom.xml http://172.31.8.134:8081/repository/${COMPONENT}/${COMPONENT}.zip
                }
             }
         } // end of the stages
