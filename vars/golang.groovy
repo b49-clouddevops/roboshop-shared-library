@@ -40,7 +40,12 @@ pipeline {
                 stage('Integration Testing') {
                     steps {
                         // mvn verify or npm verify
-                        sh "echo Unit Testing Completed"
+                        sh "echo Integration Testing Completed"
+                    }
+                }
+                stage('Function Testing') {
+                    steps {
+                        sh "echo Functional Testing Completed"
                     }
                 }
             }
