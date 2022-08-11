@@ -53,6 +53,9 @@ pipeline {
         }
 
         stage('Prepare Artifacts') {
+            when { 
+               expression { env.TAG_NAME != null }
+                }   
             steps {
                 sh "npm install"   // Generates the nodes_modules
                 sh "zip ${COMPONENT}.zip node_modules/ server.js" 
@@ -61,6 +64,9 @@ pipeline {
         }
 
         stage('Uploading Artifacts') {
+            when { 
+               expression { env.TAG_NAME != null }
+                }   
             steps {
                 sh "echo Doing build"
                }
