@@ -33,7 +33,8 @@ pipeline {
             parallel {
                 stage('Unit Testing') {
                     steps {
-                        // 
+                        // mvn test or npm test
+                        sh "Unit Testing Completed"
                     }
                 }
             }
