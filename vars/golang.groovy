@@ -30,7 +30,13 @@ pipeline {
                 }
             }
         stage('Test Cases') {
-            
+            parallel {
+                stage('Unit Testing') {
+                    steps {
+                        // 
+                    }
+                }
+            }
         }
 
         stage('Build') {
