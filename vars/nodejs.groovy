@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-// Preparing an artifact with that tag should only happen if it doesn;t exist on NEXUS.
+// Preparing an artifact with that tag should only happen if it doesn't exist on NEXUS.
 
         stage('Prepare Artifacts') {
             when { 
