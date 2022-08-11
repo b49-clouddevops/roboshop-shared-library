@@ -69,7 +69,8 @@ pipeline {
                expression { env.TAG_NAME != null }
                 }   
             steps {
-                curl -v -u admin:admin123 --upload-file pom.xml http://localhost:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom
+                curl -v -u ${NEXUS_USR}:admin123 --upload-file pom.xml http://localhost:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom
+                ${SONAR_USR} ${SONAR_PSW}
                }
             }
         } // end of the stages
