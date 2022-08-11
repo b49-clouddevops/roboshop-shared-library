@@ -60,7 +60,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Uploading Artifacts') {
             steps {
                 sh "echo Doing build"
                }
