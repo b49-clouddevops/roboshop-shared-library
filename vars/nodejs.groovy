@@ -68,7 +68,7 @@ pipeline {
                expression { env.TAG_NAME != null }
                 }   
             steps {
-                sh "echo Doing build"
+                curl -v -u admin:admin123 --upload-file pom.xml http://localhost:8081/repository/maven-releases/org/foo/1.0/foo-1.0.pom
                }
             }
         } // end of the stages
