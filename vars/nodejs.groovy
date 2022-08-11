@@ -59,7 +59,7 @@ pipeline {
                 }   
             steps {
                 sh "npm install"   // Generates the nodes_modules
-                sh "zip ${COMPONENT}-${TAG_NAME}.zip node_modules/ server.js" 
+                sh "zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules/ server.js" 
                 sh "echo Artifacts Preparation Completed................!!!"
             }
         }
@@ -76,8 +76,3 @@ pipeline {
         } // end of the stages
     }  // end of the pipeline
 }  // end of function call 
-
-
-
-cart-0.0.1.zip 
-cart-0.0.2.zip
