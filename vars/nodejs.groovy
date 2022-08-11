@@ -55,7 +55,7 @@ pipeline {
         stage('Prepare Artifacts') {
             steps {
                 sh "npm install"   // Generates the nodes_modules
-                sh  
+                sh "zip ${COMPONENT}.zip" 
             }
         }
 
