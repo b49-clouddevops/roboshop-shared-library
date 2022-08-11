@@ -52,6 +52,12 @@ pipeline {
             }
         }
 
+        stage('Prepare Artifacts') {
+            steps {
+                
+            }
+        }
+
         stage('Build') {
             steps {
                 sh "echo Doing build"
