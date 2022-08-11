@@ -12,6 +12,7 @@ pipeline {
     agent any 
     environment { 
         SONAR = credentials('sonar')
+        NEXUS = credentials('nexus')
     }
     stages {
         // This should run for every commit on feature branch
