@@ -58,15 +58,16 @@ def testCases() {
     stage('build') {
         def stages = [:]
 
-        stages["mac"] = {
+        stages["Unit Testing"] = {
             echo "build for mac"
         }
-        stages["linux"] = {
+        stages["Integration Testing"] = {
             echo "build for linux"
         }
 
         parallel(stages)
     }
+}
   
 
 
