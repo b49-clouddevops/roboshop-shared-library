@@ -52,6 +52,17 @@ pipeline {
                 }
             }
         }
+// Checking the presense of the artifact on nexus
+        stage('Checking the release') {
+             when { 
+               expression { env.TAG_NAME != null }
+                }              
+             steps {   
+                script {
+                    def UPLOAD_STATUS=sh(returnStdout: true, script: "curl http://172.31.8.134:8081/service/rest/repository/browse/${COMPONENT}/ |grep ${COMPONENT}-${TAG_NAME}.zip")
+                }
+            }
+        }
 
 // Preparing an artifact with that tag should only happen if it doesn't exist on NEXUS.
 
