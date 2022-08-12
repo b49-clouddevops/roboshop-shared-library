@@ -56,7 +56,7 @@ stage('Lint Checks') {
 
 def testCases() {
     stage('Test Cases') {
-            parallel {
+            parallel(
                 stage('Unit Testing') {
                         sh "echo Unit Testing Completed"
                 }
@@ -66,6 +66,6 @@ def testCases() {
                 stage('Function Testing') {
                         sh "echo Functional Testing Completed"
                 }
-            }
+            )
         }
     }
