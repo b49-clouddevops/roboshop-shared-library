@@ -56,7 +56,7 @@ stage('Lint Checks') {
 
 def testCases() {
     stage('Test Cases') {
-        def deployments = [:]
+        def stages = [:]    // declaring empty list
                 stage('Unit Testing') {
                         sh "echo Unit Testing Completed"
                 }
