@@ -66,9 +66,11 @@ def testCases() {
                 stage["Function Testing"] = {
                         sh 'echo Functional Testing Completed'
                 }
-              parallel(stages)
+              parallel(stages) // This is something which we are missing
           }
       }
 
 
 
+// Parallel Stage reference # Ex:23
+// 
