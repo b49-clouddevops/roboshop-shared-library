@@ -1,4 +1,5 @@
 def javaSonarCheck() {  
+  if (env.APP_TYPE == "java") {
   stage('Sonar Checks') {
   sh '''
     # mvn clean compile
@@ -7,7 +8,7 @@ def javaSonarCheck() {
     # chmod +x /tmp/quality-gate.sh && /tmp/quality-gate.sh ${SONAR_USR} ${SONAR_PSW} 172.31.4.93 ${COMPONENT}
     echo SonarChecks Completed
    '''
-}
+  }
 
 def sonarCheck() {
   sh '''
@@ -16,7 +17,8 @@ def sonarCheck() {
     # chmod +x /tmp/quality-gate.sh && /tmp/quality-gate.sh ${SONAR_USR} ${SONAR_PSW} 172.31.4.93 ${COMPONENT}
     echo SonarChecks Completed
    '''
-}
+  }
+
 
 
 def lintChecks() {
