@@ -61,44 +61,14 @@ stage('Lint Checks') {
 //                         sh "echo Unit Testing Completed"
 //                 }
 //                 stage["Integration Testing"] = {
-//                         sh "echo Integration Testing Completed"
+//                         sh "echo Integration Testing Completed'
 //                 }
 //                 stage["Function Testing"] = {
-//                         sh "echo Functional Testing Completed"
+//                         sh echo Functional Testing Completed'
 //                 }
 //               parallel(stages)
 //           }
 //       }
 
-def testCases() {
-  stage('Test Cases') {
-    def stages = [:]
 
-    stages["Unit Tests"] = {
-      sh 'echo Unit Tests'
-    }
-    stages["Integration Tests"] = {
-      sh 'echo Integration Tests'
-    }
 
-    stages["Functional Tests"] = {
-      sh 'echo Functional Tests'
-    }
-
-    parallel(stages)
-  }
-
-}
-
-    // stage('build') {
-    //     def stages = [:]
-
-    //     stages["mac"] = {
-    //         echo "build for mac"
-    //     }
-    //     stages["linux"] = {
-    //         echo "build for linux"
-    //     }
-
-    //     parallel(stages)
-    // }
