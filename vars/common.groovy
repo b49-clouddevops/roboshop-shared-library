@@ -28,5 +28,11 @@ stage('Lint Checks') {
     echo lint checks completed for ${COMPONENT}
     '''
   } 
-  else if 
+  else if (env.APP_TYPE == "java") { 
+      sh '''
+      echo lint checks starting for ${COMPONENT}
+      mvn checkstyle:check || true
+      echo lint checks completed for ${COMPONENT}
+      '''
+  }
 }
