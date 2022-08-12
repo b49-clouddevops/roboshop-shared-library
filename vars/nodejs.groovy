@@ -70,6 +70,7 @@ pipeline {
         stage('Prepare Artifacts') {
             when { 
                expression { env.TAG_NAME != null }
+               expression { env.UPLOAD_STATUS == "" }
                 }   
             steps {
                 sh "npm install"   // Generates the nodes_modules
