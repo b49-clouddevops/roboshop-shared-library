@@ -64,7 +64,7 @@ def testCases {
                 }
                 stage('Function Testing') {
                         sh "echo Functional Testing Completed"
-                    }
+                }
             }
         }
-}
+    }
