@@ -50,11 +50,11 @@ stage('Lint Checks') {
         // ~/node_modules/jslint/bin/jslint.js server.js || true
         echo lint checks completed for ${COMPONENT}
         '''
+    }
   }
 }
-
 def testCases() {
-        stage('Test Cases') {
+    stage('Test Cases') {
             parallel {
                 stage('Unit Testing') {
                         sh "echo Unit Testing Completed"
