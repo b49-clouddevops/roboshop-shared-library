@@ -91,3 +91,8 @@ pipeline {
         } // end of the stages
     }  // end of the pipeline
 }  // end of function call 
+
+
+Preparing   ===> Generating the artifact  ( build and maing .jar,.war .ear )
+Packing 
+
