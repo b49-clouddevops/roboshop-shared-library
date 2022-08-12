@@ -19,6 +19,7 @@ def sonarCheck() {
 
 
 def lintChecks() {
+stage('Lint Checks') {
   sh '''
      # echo installing jslint
      # npm install jslint
