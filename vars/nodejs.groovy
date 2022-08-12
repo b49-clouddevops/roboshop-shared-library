@@ -1,4 +1,8 @@
-def call 
+def call() {
+    node {
+        common.lintChecks()
+    }
+}
 
 
 
