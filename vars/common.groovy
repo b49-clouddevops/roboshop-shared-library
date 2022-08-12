@@ -73,4 +73,4 @@ def testCases() {
 
 
 // Parallel Stage reference # Ex:23
-// 
+// https://stackoverflow.com/questions/46834998/scripted-jenkinsfile-parallel-stage
