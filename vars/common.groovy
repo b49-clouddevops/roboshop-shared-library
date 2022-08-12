@@ -66,13 +66,10 @@ def testCases() {
                 stages["Function Testing"] = {
                         sh 'echo Functional Testing Completed'
                 }
-              parallel(stages) // This is something which we are missing
+              parallel(stages) // This is something which we are missing,added
           }
       }
 
       
-
-
-
 // Parallel Stage reference # Ex:23
 // https://stackoverflow.com/questions/46834998/scripted-jenkinsfile-parallel-stage
