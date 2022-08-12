@@ -1,3 +1,4 @@
+env.APP_TYPE="golang"
 def call() {
     node {
         common.lintChecks()
@@ -14,20 +15,6 @@ pipeline {
     }
     stages {
         // This should run for every commit on feature branch
-        stage('Lint checks') {
-            steps {
-                script {
-                     lintChecks()
-                    }
-                }
-            }
-        stage('Sonar Code Quality Check') {
-            steps {
-                script {
-                     common.sonarCheck()
-                    }
-                }
-            }
             
         stage('Test Cases') {
             parallel {
