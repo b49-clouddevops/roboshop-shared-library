@@ -1,6 +1,6 @@
 def javaSonarCheck() {  
-  if (env.APP_TYPE == "java") {
   stage('Sonar Checks') {
+  if (env.APP_TYPE == "java") {
   sh '''
     # mvn clean compile
     # sonar-scanner -Dsonar.host.url=http://172.31.4.93:9000 -Dsonar.sources=. -Dsonar.login=${SONAR_USR} -Dsonar.password=${SONAR_PSW} -Dsonar.projectKey=${COMPONENT} -Dsonar.java.binaries=target/classes/
@@ -9,6 +9,7 @@ def javaSonarCheck() {
     echo SonarChecks Completed
    '''
   }
+}
 
 def sonarCheck() {
   sh '''
