@@ -82,6 +82,7 @@ pipeline {
         stage('Uploading Artifacts') {
             when { 
                expression { env.TAG_NAME != null }
+               expression { env.UPLOAD_STATUS == "" }
             }   
             steps {
                sh "curl -f -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${COMPONENT}-${TAG_NAME}.zip http://172.31.8.134:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip"
