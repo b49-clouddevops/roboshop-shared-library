@@ -66,6 +66,19 @@ def testCases() {
                 stage["Function Testing"] = {
                         sh "echo Functional Testing Completed"
                 }
-
+              parallel(stages)
           }
       }
+
+    // stage('build') {
+    //     def stages = [:]
+
+    //     stages["mac"] = {
+    //         echo "build for mac"
+    //     }
+    //     stages["linux"] = {
+    //         echo "build for linux"
+    //     }
+
+    //     parallel(stages)
+    // }
