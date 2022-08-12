@@ -55,21 +55,18 @@ stage('Lint Checks') {
 }
 
 def testCases() {
-    stage('Test Cases') {
-        def stages = [:]    // declaring empty list
-                stage["Unit Testing"] = {
-                        sh 'echo Unit Testing Completed'
-                }
-                stage["Integration Testing"] = {
-                        sh 'echo Integration Testing Completed'
-                }
-                stage["Function Testing"] = {
-                        sh 'echo Functional Testing Completed'
-                }
-              parallel(stages) // This is something which we are missing
-          }
-      }
+    stage('build') {
+        def stages = [:]
 
+        stages["mac"] = {
+            echo "build for mac"
+        }
+        stages["linux"] = {
+            echo "build for linux"
+        }
+
+        parallel(stages)
+    }
   
 
 
