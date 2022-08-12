@@ -96,4 +96,4 @@ pipeline {
 
 
 
-In declarative pi
+In declarative pipeline, (20 stages ) , if condition 
