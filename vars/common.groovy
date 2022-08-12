@@ -20,10 +20,12 @@ def sonarCheck() {
 
 def lintChecks() {
 stage('Lint Checks') {
+  if (env.APP_TYPE == "") {
   sh '''
      # echo installing jslint
      # npm install jslint
      # ~/node_modules/jslint/bin/jslint.js server.js || true
     echo lint checks completed for ${COMPONENT}
     '''
+  }
 }
