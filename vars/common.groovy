@@ -15,9 +15,9 @@ def sonarCheck() {
       # chmod +x /tmp/quality-gate.sh && /tmp/quality-gate.sh ${SONAR_USR} ${SONAR_PSW} 172.31.4.93 ${COMPONENT}
       echo SonarChecks Completed
     '''
-  }
-}
-
+     }
+   }
+ }
 
 def lintChecks() {
 stage('Lint Checks') {
