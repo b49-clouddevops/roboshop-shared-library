@@ -35,4 +35,11 @@ stage('Lint Checks') {
       echo lint checks completed for ${COMPONENT}
       '''
   }
+  else if (env.APP_TYPE == "python") {  
+    sh '''
+      echo lint checks starting for ${COMPONENT}
+      pylint *.py || true 
+      echo lint checks completed for ${COMPONENT}
+      '''
+  } 
 }
