@@ -1,3 +1,6 @@
+
+
+
 def lintChecks() {
   sh '''
      # echo installing jslint
