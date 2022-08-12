@@ -53,7 +53,7 @@ stage('Lint Checks') {
   }
 }
 
-def testCases {
+def testCases() {
         stage('Test Cases') {
             parallel {
                 stage('Unit Testing') {
