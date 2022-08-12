@@ -96,4 +96,4 @@ pipeline {
 
 
 
-In declarative pipeline, (20 stages ) , if condition 
+In declarative pipeline, (20 stages ) , if condition is true, it will runs, if not it shows as blank skipped  
