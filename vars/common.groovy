@@ -57,15 +57,15 @@ stage('Lint Checks') {
 def testCases() {
     stage('Test Cases') {
         def stages = [:]    // declaring empty list
-                stage["Unit Testing"] {
+                stage["Unit Testing"] = {
                         sh "echo Unit Testing Completed"
                 }
-                stage('Integration Testing') {
+                stage["Integration Testing"] = {
                         sh "echo Integration Testing Completed"
                 }
-                stage('Function Testing') {
+                stage["Function Testing"] = {
                         sh "echo Functional Testing Completed"
                 }
 
-        }
-    }
+          }
+      }
