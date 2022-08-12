@@ -93,9 +93,3 @@ pipeline {
     }  // end of the pipeline
 }  // end of function call 
 
-
-
-
-In declarative pipeline, (20 stages ) , if condition is true, it will runs, if not it shows as blank skipped  
-
-In scripted pipeline, if the contion is tru it will run, if not it won't show.
