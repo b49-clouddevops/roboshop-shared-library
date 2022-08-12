@@ -4,6 +4,7 @@ def call() {
     node {
         common.lintChecks()
         common.sonarCheck()
+        common.testChecks()
     }
 }
 
