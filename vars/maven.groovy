@@ -1,6 +1,8 @@
+env.APP_TYPE="java"
 def call() {
     node {
         common.lintChecks()
+        common.sonarCheck()
     }
 }
 
