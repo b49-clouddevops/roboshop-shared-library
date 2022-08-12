@@ -52,3 +52,27 @@ stage('Lint Checks') {
         '''
   }
 }
+
+def testCases {
+//         stage('Test Cases') {
+//             parallel {
+//                 stage('Unit Testing') {
+//                     steps {
+//                         // mvn test or npm test
+//                         sh "echo Unit Testing Completed"
+//                     }
+//                 }
+//                 stage('Integration Testing') {
+//                     steps {
+//                         // mvn verify or npm verify
+//                         sh "echo Integration Testing Completed"
+//                     }
+//                 }
+//                 stage('Function Testing') {
+//                     steps {
+//                         sh "echo Functional Testing Completed"
+//                     }
+//                 }
+//             }
+//         }
+}
