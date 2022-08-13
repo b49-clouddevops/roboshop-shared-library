@@ -31,15 +31,15 @@ stage('Lint Checks') {
   } 
   else if (env.APP_TYPE == "java") { 
       sh '''
-      echo lint checks starting for ${COMPONENT}
-      mvn checkstyle:check || true
+      // echo lint checks starting for ${COMPONENT}
+      // mvn checkstyle:check || true
       echo lint checks completed for ${COMPONENT}
       '''
   }
   else if (env.APP_TYPE == "python") {  
     sh '''
-      echo lint checks starting for ${COMPONENT}
-      pylint *.py || true 
+      // echo lint checks starting for ${COMPONENT}
+      // pylint *.py || true 
       echo lint checks completed for ${COMPONENT}
       '''
   } 
