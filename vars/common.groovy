@@ -83,7 +83,7 @@ def artifacts() {
            } 
            else if (env.APP_TYPE == "java")  {
                 sh "mvn clean package"
-                sh ""
+                sh "mv target/shipping-1.0.jar"
            }
 
            else if (env.APP_TYPE == "python")  {
