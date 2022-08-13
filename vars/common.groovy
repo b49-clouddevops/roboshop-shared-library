@@ -92,9 +92,10 @@ def artifacts() {
            }
 
            else if (env.APP_TYPE == "go")  {
-                sh ""
+                sh "go mod init ${COMPONENT}"
+                sh "go get"
+                sh "go build"
            }          
-
         }
      
       stage('Uploading Artifacts') { 
