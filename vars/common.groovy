@@ -95,7 +95,7 @@ def artifacts() {
                 sh "go mod init ${COMPONENT}"
                 sh "go get"
                 sh "go build"
-                sh "zip -r ${COMPONENT}-${TAG_NAME}.zip "
+                sh "zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}"
            }          
         }
      
