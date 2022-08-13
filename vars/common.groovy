@@ -20,38 +20,28 @@ def sonarCheck() {
  }
 
 def lintChecks() {
-stage('Lint Checks') {
-  if (env.APP_TYPE == "nodejs") {
-  sh '''
-    //  echo installing jslint
-    //  npm install jslint
-    //   ~/node_modules/jslint/bin/jslint.js server.js || true
-    echo lint checks completed for ${COMPONENT}
-    '''
-  } 
-  else if (env.APP_TYPE == "java") { 
-      sh '''
-      // echo lint checks starting for ${COMPONENT}
-      // mvn checkstyle:check || true
-      echo lint checks completed for ${COMPONENT}
-      '''
-  }
-  else if (env.APP_TYPE == "python") {  
+  stage('Lint Checks') {
+    if (env.APP_TYPE == "nodejs") {
     sh '''
-      // echo lint checks starting for ${COMPONENT}
-      // pylint *.py || true 
       echo lint checks completed for ${COMPONENT}
       '''
-  } 
-  else {
-      sh '''
-        // echo installing jslint
-        // npm install jslint
-        // ~/node_modules/jslint/bin/jslint.js server.js || true
+    } 
+    else if (env.APP_TYPE == "java") { 
+        sh '''
         echo lint checks completed for ${COMPONENT}
         '''
     }
-  }
+    else if (env.APP_TYPE == "python") {  
+      sh '''
+        echo lint checks completed for ${COMPONENT}
+        '''
+    } 
+    else {
+        sh '''
+          echo lint checks completed for ${COMPONENT}
+          '''
+       }
+    }
 }
 
 def testCases() {
