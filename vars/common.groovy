@@ -84,7 +84,7 @@ def artifacts() {
            else if (env.APP_TYPE == "java")  {
                 sh "mvn clean package"
                 sh "mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar"
-                sh "zip -"
+                sh "zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}.jar"
            }
 
            else if (env.APP_TYPE == "python")  {
