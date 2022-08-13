@@ -5,6 +5,9 @@ def call() {
         common.lintChecks()
         common.sonarCheck()
         common.testCases()
+        if(env.TAG_NAME != null) {
+        common.artifacts()
+        }
     }
 }
 
