@@ -88,7 +88,7 @@ def artifacts() {
            }
 
            else if (env.APP_TYPE == "python")  {
-                sh "echo python"
+                sh "zip -r "
            }
 
            else if (env.APP_TYPE == "go")  {
