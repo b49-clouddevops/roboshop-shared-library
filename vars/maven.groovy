@@ -1,7 +1,6 @@
-env.APP_TYPE="java"
 def call() {
     node {
-        git branch: 'main', url: 'https://github.com/b49-clouddevops/${CATALOGUE}'
+        git branch: 'main', url: 'https://github.com/b49-clouddevops/${COMPONENT}'
         env.APP_TYP = "java"
         common.lintChecks()
         common.sonarCheck()
