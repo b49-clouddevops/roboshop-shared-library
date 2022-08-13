@@ -1,8 +1,7 @@
-env.APP_TYPE="nodejs"
-
 def call() {
     node {
         git branch: 'main', url: 'https://github.com/b49-clouddevops/catalogue'
+        env.APP_TYP = "nodejs"
         common.lintChecks()
         common.sonarCheck()
         common.testCases()
@@ -11,6 +10,7 @@ def call() {
         }
     }
 }
+
 
 
 
