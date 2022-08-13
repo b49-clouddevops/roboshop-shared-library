@@ -82,7 +82,7 @@ def artifacts() {
          
            } 
            else if (env.APP_TYPE == "java")  {
-                sh "echo java"
+                sh "mvn clean package"
            }
 
            else if (env.APP_TYPE == "python")  {
