@@ -76,7 +76,7 @@ def artifacts() {
         stage('Prepare Artifacts') {
            if (env.APP_TYPE == "nodejs") {
                
-                sh "npm install"   // Generates the nodes_modules
+                sh "npm install  && ls -ltr "// Generates the nodes_modules
                 sh "zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules/ server.js" 
                 sh "echo Artifacts Preparation Completed................!!!"
          
