@@ -96,6 +96,7 @@ def artifacts() {
                 sh "go get"
                 sh "go build"
                 sh "zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}"
+                sh "ls -ltr && pwd"
            }          
         }
      
