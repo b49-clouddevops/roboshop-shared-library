@@ -91,7 +91,7 @@ def artifacts() {
                 sh "zip -r ${COMPONENT}-${TAG_NAME}.zip *.py *.ini requirements.txt"
            }
 
-           else if (env.APP_TYPE == "go")  {
+           else if (env.APP_TYPE == "golang")  {
                 sh "go mod init ${COMPONENT}"
                 sh "go get"
                 sh "go build"
