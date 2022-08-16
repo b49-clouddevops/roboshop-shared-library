@@ -96,6 +96,7 @@ def artifacts() {
                 sh "cd static"
                 sh "zip -r ../${COMPONENT}-${TAG_NAME}.zip *" 
                 sh "echo Artifacts Preparation Completed................!!!"
+                 sh "ls -ltr && pwd"
                 sh "cd ../"
          
            } 
@@ -105,13 +106,13 @@ def artifacts() {
                 sh "go get"
                 sh "go build"
                 sh "zip -r ${COMPONENT}-${TAG_NAME}.zip ${COMPONENT}"
-                sh "ls -ltr && pwd"
+               
            }          
         }
      
       stage('Uploading Artifacts') { 
         withCredentials([usernamePassword(credentialsId: 'nexus', passwordVariable: 'NEXUS_PSW', usernameVariable: 'NEXUS_USR')]) {
-               
+               sh "ls -ltr"
                sh "curl -f -v -u ${NEXUS_USR}:${NEXUS_PSW} --upload-file ${COMPONENT}-${TAG_NAME}.zip http://172.31.8.134:8081/repository/${COMPONENT}/${COMPONENT}-${TAG_NAME}.zip"
                // Curl returns failure when failed when you use -f   
                }
