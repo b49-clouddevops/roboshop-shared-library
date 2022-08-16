@@ -91,10 +91,11 @@ def artifacts() {
                 sh "zip -r ${COMPONENT}-${TAG_NAME}.zip *.py *.ini requirements.txt"
            }
 
-           if (env.APP_TYPE == "nginx") {
-               
-                sh "cd static"
-                sh "zip -r ../${COMPONENT}-${TAG_NAME}.zip *" 
+           if (env.APP_TYPE == "nginx")          
+                sh '''
+                  cd static
+                  zip -r ../${COMPONENT}-${TAG_NAME}.zip * 
+                  ''' 
 
          
            } 
