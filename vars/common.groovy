@@ -95,11 +95,7 @@ def artifacts() {
                
                 sh "cd static"
                 sh "zip -r ../${COMPONENT}-${TAG_NAME}.zip *" 
-                sh "pwd && ls -ltr && ls -ltr static/"
-                sh "echo Artifacts Preparation Completed................!!!"
-                sh "ls -ltr && pwd"
-                sh "cd ../"
-                sh "ls -ltr && pwd"
+
          
            } 
 
