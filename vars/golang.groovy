@@ -1,7 +1,6 @@
 def call() {
     node {
         git branch: 'main', url: "https://github.com/b49-clouddevops/${COMPONENT}"
-     //   env.APP_TYP = "golang"
         env.APP_TYPE = "golang"
         common.lintChecks()
         common.sonarCheck()
