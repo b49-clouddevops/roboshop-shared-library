@@ -1,4 +1,10 @@
+def call {
 
+    properties([
+        parameters([
+            choice(choices: ['dev\nprod'], description: "Chose the Env", name: "ENV"),
+        ]),
+    ])
 
     node {
         stage('terraform init'){
@@ -6,3 +12,4 @@
             sh "sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars""
         }
     }
+}
