@@ -7,6 +7,7 @@ def call {
     ])
 
     node {
+        git branch: 'main', url: "https://github.com/b49-clouddevops/${COMPONENT}"
         stage('terraform init'){
             sh "terrafile -f env-${ENV}/Terrafile"
             sh "sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars""
