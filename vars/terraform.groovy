@@ -1,4 +1,4 @@
-def call {
+def call() {
     properties([
         parameters([
             choice(choices: ['dev\nprod'], description: "Chose the Env", name: "ENV"),
