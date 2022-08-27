@@ -6,6 +6,7 @@ def call() {
     ])
 
     node {
+        sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
             sh "terrafile -f env-${ENV}/Terrafile"
