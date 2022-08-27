@@ -1,10 +1,4 @@
-def call {
 
-    properties([
-        parameters([
-            choice(choices: ['dev\nprod], description: "Increase version's number: MAJOR.MINOR.FIX", name: "VERSIONING"),
-        ]),
-    ])
 
     node {
         stage('terraform init'){
@@ -12,4 +6,3 @@ def call {
             sh "sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars""
         }
     }
-}
