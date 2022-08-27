@@ -2,7 +2,7 @@ def call {
 
     properties([
         parameters([
-            choice(choices: ['fix\nmajor\nminor\nnone'], description: "Increase version's number: MAJOR.MINOR.FIX", name: "VERSIONING"),
+            choice(choices: ['dev\nprod], description: "Increase version's number: MAJOR.MINOR.FIX", name: "VERSIONING"),
         ]),
     ])
 
