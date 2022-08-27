@@ -9,7 +9,7 @@ def call() {
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
             sh "terrafile -f env-${ENV}/Terrafile"
-            sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars""
+            sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
         }
 
         stage('terraform plan') {
