@@ -11,7 +11,6 @@ def call() {
         stage('terraform init'){
             sh "terrafile -f env-${ENV}/Terrafile"
             sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
-            sh "terraform taint module.mongodb.aws_docdb_cluster_instance.cluster_instance"
         }
 
         stage('terraform plan') {
