@@ -8,7 +8,6 @@ def call() {
     node {
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
-        ansiColor('xterm') {
         stage('terraform init'){
             sh "terrafile -f env-${ENV}/Terrafile"
             sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
@@ -24,4 +23,4 @@ def call() {
             }
         }
     }
-}
+
