@@ -2,7 +2,7 @@ def call() {
     properties([
         parameters([
             choice(choices: 'dev\nprod', description: "Chose the Env", name: "ENV"),
-            choice(choices: ['apply', 'destroy'], description: "Choose Action", name: "ACTION"),
+            choice(choices: 'apply\ndestroy', description: "Choose Action", name: "ACTION"),
         ]),
     ])
 
@@ -20,7 +20,7 @@ def call() {
         }
 
         stage('terraform apply') {
-                sh "terraform apply -var-file=env-${ENV}/${ENV}.tfvars -auto-approve"
+                sh "terraform ${ACTION} -var-file=env-${ENV}/${ENV}.tfvars -auto-approve"
             }
         }
     }
