@@ -1,6 +1,6 @@
 def call() {
 
-// If the env.VARIBLE doesn't exist ( for DB's) it will add the past as pwd i.e, ./
+// If the env.VARIABLE is null ( for DB's) it will add the past as pwd i.e, ./
    if(!env.TERRAFORM_DIR)  {
         env.TERRAFORM_DIR="./"
    }
@@ -16,11 +16,13 @@ def call() {
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
+            sh "cd ${TERRAFORM_DIR}"
             sh "terrafile -f env-${ENV}/Terrafile"
             sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
         }
 
         stage('terraform plan') {
+                sh ""
                 sh "echo doing a terrafomr plan"
                 sh "terraform plan -var-file=env-${ENV}/${ENV}.tfvars"
         }
