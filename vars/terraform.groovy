@@ -1,9 +1,6 @@
 def call() {
 
-// If the env.VARIABLE is null ( for DB's) it will add the past as pwd i.e, .
-
-// terraform-mutable will be there only for components and not for the DB's. Since we use the same code here, we need to ensure for DB's it' don't have to cd to terraform_dir
-// and executre tf commands. But for APP Components, it's to go to terraform-mutable and execute the terraform commands
+// If the env.VARIABLE is null ( for DB's) it will add the past as pwd i.e, ./
    if(!env.TERRAFORM_DIR)  {
         env.TERRAFORM_DIR="./"
    }
@@ -39,9 +36,12 @@ def call() {
             sh ''' 
                 cd ${TERRAFORM_DIR}
                 terraform ${ACTION} -var-file=env-${ENV}/${ENV}.tfvars -auto-approve
+            '''
             }
         }
     }
 }
 
 
+// terraform-mutable will be there only for components and not for the DB's. Since we use the same code here, we need to ensure for DB's it' don't have to cd to terraform_dir
+// and executre tf commands. But for APP Components, it's to go to terraform-mutable and execute the terraform commands
