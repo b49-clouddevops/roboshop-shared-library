@@ -25,9 +25,11 @@ def call() {
         }
 
         stage('terraform plan') {
-                sh "cd ${TERRAFORM_DIR}"
-                sh "echo doing a terrafomr plan"
-                sh "terraform plan -var-file=env-${ENV}/${ENV}.tfvars"
+            sh '''
+                cd ${TERRAFORM_DIR}
+                echo doing a terrafomr plan
+                terraform plan -var-file=env-${ENV}/${ENV}.tfvars
+            '''
         }
 
         stage('terraform apply') {
