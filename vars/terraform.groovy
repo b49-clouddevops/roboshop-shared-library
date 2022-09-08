@@ -13,7 +13,7 @@ def call() {
     ])
 
     node {
-        ansiColor('xterm') {
+        ansiColor('xterm') {  // This plugin is for colors. You need to install this in the MANAGE PLUGINS
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
