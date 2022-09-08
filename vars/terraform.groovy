@@ -13,6 +13,7 @@ def call() {
     ])
 
     node {
+        ansiColor('xterm') {
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
@@ -35,7 +36,7 @@ def call() {
             }
         }
     }
-
+}
 
 
 // terraform-mutable will be there only for components and not for the DB's. Since we use the same code here, we need to ensure for DB's it' don't have to cd to terraform_dir
