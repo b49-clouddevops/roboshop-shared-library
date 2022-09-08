@@ -19,7 +19,7 @@ def call() {
             sh "cd ${TERRAFORM_DIR}"
             sh "pwd"
             sh "ls -ltr"
-            sh "terrafile -f env-${ENV}/Terrafile"
+            sh "terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile" 
             sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
         }
 
