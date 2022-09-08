@@ -19,8 +19,8 @@ def call() {
         stage('terraform init'){
             sh ''' 
             cd ./${TERRAFORM_DIR}
-            terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile
-            terraform -chdir=${TERRAFORM_DIR} init -backend-config=env-${ENV}/${ENV}-backend.tfvars
+            terrafile -f env-${ENV}/Terrafile
+            terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars
             '''
         }
 
