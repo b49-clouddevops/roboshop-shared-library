@@ -1,8 +1,6 @@
 def call() {
 
-// terraform-mutable will be there only for components and not for the DB's. Since we use the same code here, we need to ensure for DB's it' don't have to cd to terraform_dir
-// and executre tf commands. But for APP Components, it's to go to terraform-mutable and execute the terraform commands
-// If the value is null, that means it's for DB's and the dir will be null, so that the job wont fail.
+// If the env.VARIBLE doesn't exist ( for DB's) it will add the past as pwd i.e, ./
    if(!env.TERRAFORM_DIR)  {
         env.TERRAFORM_DIR="./"
    }
