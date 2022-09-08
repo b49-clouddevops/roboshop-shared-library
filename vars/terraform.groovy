@@ -17,11 +17,11 @@ def call() {
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
-            sh "cd ${TERRAFORM_DIR}"
-            sh "pwd"
-            sh "ls -ltr"
-            sh "terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile" 
-            sh "terraform -chdir=${TERRAFORM_DIR} init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
+            sh ''' 
+            cd ${TERRAFORM_DIR}
+            terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile
+            terraform -chdir=${TERRAFORM_DIR} init -backend-config=env-${ENV}/${ENV}-backend.tfvars
+            '''
         }
 
         stage('terraform plan') {
