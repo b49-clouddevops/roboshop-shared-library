@@ -18,7 +18,7 @@ def call() {
         git branch: 'main', url: "https://github.com/b49-clouddevops/${REPONAME}"
         stage('terraform init'){
             sh ''' 
-            cd ${TERRAFORM_DIR}
+            cd ./${TERRAFORM_DIR}
             terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile
             terraform -chdir=${TERRAFORM_DIR} init -backend-config=env-${ENV}/${ENV}-backend.tfvars
             '''
