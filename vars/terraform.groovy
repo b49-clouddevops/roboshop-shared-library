@@ -20,7 +20,7 @@ def call() {
             sh "pwd"
             sh "ls -ltr"
             sh "terrafile -f ${TERRAFORM_DIR}/env-${ENV}/Terrafile" 
-            sh "terraform -chdir "${TERRAFORM_DIR}" init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
+            sh "terraform -chdir="${TERRAFORM_DIR}" init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
         }
 
         stage('terraform plan') {
