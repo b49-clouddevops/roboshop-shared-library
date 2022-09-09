@@ -9,6 +9,8 @@ def call() {
         parameters([
             choice(choices: 'dev\nprod', description: "Chose the Env", name: "ENV"),
             choice(choices: 'apply\ndestroy', description: "Choose apply or destroy", name: "ACTION"),
+            choice(choices: 'apply\ndestroy', description: "Choose apply or destroy", name: "ACTION"),
+            APP_VERSION
         ]),
     ])
 
