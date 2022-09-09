@@ -28,7 +28,7 @@ def call() {
         stage('terraform plan') {
             sh '''
                 cd ${TERRAFORM_DIR}
-                echo doing a terrafomr plan
+                export TF_VAR_APP_VERSION
                 terraform plan -var-file=env-${ENV}/${ENV}.tfvars -var APP_VERSION=${APP_VERSION}
             '''
         }
