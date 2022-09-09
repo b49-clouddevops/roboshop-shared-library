@@ -10,7 +10,6 @@ def call() {
             choice(choices: 'dev\nprod', description: "Chose the Env", name: "ENV"),
             choice(choices: 'apply\ndestroy', description: "Choose apply or destroy", name: "ACTION"),
             string(choices: 'APP_VERSION', description: "Chose APP_VERSION: Option only valid for APPS", name: "APP_VERSION"),
-            APP_VERSION
         ]),
     ])
 
