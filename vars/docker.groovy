@@ -4,7 +4,7 @@ def call() {
         git branch: 'main', url: "https://github.com/b49-clouddevops/${COMPONENT}"
         stage('Docker Build') {
             
-            sh "docker  build ."
+            sh "docker  build -t 834725375088.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:latest ."
         }
 
     }
