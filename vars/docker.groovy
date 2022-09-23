@@ -16,6 +16,8 @@ def call() {
     }
 }
 
+docker 
+
 
         // common.lintChecks()
         // common.sonarCheck()
