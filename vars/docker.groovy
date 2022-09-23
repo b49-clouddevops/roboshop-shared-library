@@ -9,7 +9,7 @@ def call() {
         if(env.TAG_NAME != null) {
         stage('Docker Push') {
             sh "docker tag 834725375088.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:latest 834725375088.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:${TAG_NAME}" 
-            sh "docker push 834725375088.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:latest"
+            sh "docker push 834725375088.dkr.ecr.us-east-1.amazonaws.com/${COMPONENT}:${TAG_NAME}"
            }
         }
     }
